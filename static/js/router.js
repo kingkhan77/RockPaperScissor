@@ -14,7 +14,9 @@ function makeMove(move) {
     })
     .then(response => response.json())
     .then(data => {
-        document.getElementById('result').innerText = `AI chose: ${data.ai_move}\n${data.result}`;
+        const resultText = `AI chose: ${data.ai_move}. ${data.result}`;
+        document.getElementById('result').innerText = resultText;
+        speak(resultText); // 🔊 Speak the result
     });
 }
 
@@ -68,6 +70,12 @@ function stopCamera() {
     document.getElementById('cameraStatus').innerText = 'Camera stopped.';
     document.getElementById('startCameraBtn').classList.remove('hidden');
     document.getElementById('stopCameraBtn').classList.add('hidden');
+}
+
+function speak(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US'; // or adjust for your language
+    speechSynthesis.speak(utterance);
 }
 
 function classifyHandPose(landmarks) {
@@ -135,6 +143,8 @@ async function detectHands() {
 }
 
 async function startCameraInput() {
+    speak('Camera started. Detecting hand signs.');
+
     if (isCameraOn) return;
     const ready = await setupCamera();
     if (!ready) return;
@@ -150,7 +160,7 @@ async function startCameraInput() {
     isCameraOn = true;
     video.play();
 
-    detectionInterval = setInterval(detectHands, 1000); // Detect every 1 second
+    detectionInterval = setInterval(detectHands, 2000); // Detect every 1 second
 }
 
 function setupCameraButtons() {
