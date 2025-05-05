@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="font-sans text-center mt-12">
+    <h1 class="text-3xl font-bold mb-8">Rock-Paper-Scissors</h1>
+    <button class="px-4 py-2 text-lg m-2 bg-blue-500 text-white rounded" onclick="makeMove('rock')">Rock</button>
+    <button class="px-4 py-2 text-lg m-2 bg-green-500 text-white rounded" onclick="makeMove('paper')">Paper</button>
+    <button class="px-4 py-2 text-lg m-2 bg-red-500 text-white rounded" onclick="makeMove('scissors')">Scissors</button>
+    <div id="result" class="mt-5 text-lg">Make your move!</div>
+    <button class="px-4 py-2 text-lg m-2 bg-gray-500 text-white rounded" onclick="showStatistics()">Show Statistics</button>
+    <button class="px-4 py-2 text-lg m-2 bg-yellow-500 text-white rounded" onclick="exitGame()">Exit</button>
+
+    <!-- Video element for camera input -->
+    <div class="mt-8">
+        <video id="video" width="320" height="240" autoplay muted playsinline class="mx-auto border border-gray-400 rounded"></video>
+        <div>
+            <button id="startCameraBtn" class="mt-2 px-4 py-2 bg-purple-600 text-white rounded">Start Camera Input</button>
+            <button id="stopCameraBtn" class="mt-2 px-4 py-2 bg-red-600 text-white rounded hidden">Stop Camera Input</button>
+        </div>
+        <div id="cameraStatus" class="mt-2 text-sm text-gray-600"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+
+    <script src="/static/js/router.js"></script>
+</body>
+</html>
