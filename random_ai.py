@@ -20,6 +20,8 @@ def determine_winner(user_move, ai_move):
 user_move_history = []
 results = []
 
+ai_previous_move = None
+
 # Initialize a Markov Chain model
 transition_counts = defaultdict(lambda: defaultdict(int))
 previous_move = None
@@ -75,6 +77,8 @@ def show_statistics():
     print(f"Draws: {draws}")
 
 def play_game():
+    global ai_previous_move
+
     user_move = input("Enter your move (rock, paper, scissors): ").lower()
     while user_move not in MOVES:
         print("Invalid move. Try again.")
@@ -90,6 +94,13 @@ def play_game():
         ai_move = 'scissors'
     else:
         ai_move = 'rock'
+
+    # With 50% chance, if AI move is same as last time, pick a different move to reduce predictability
+    if ai_move == ai_previous_move and random.random() < 0.5:
+        other_moves = [move for move in MOVES if move != ai_move]
+        ai_move = random.choice(other_moves)
+
+    ai_previous_move = ai_move
 
     print(f"AI chose: {ai_move}")
 
