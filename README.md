@@ -1,8 +1,3 @@
-Here's a clean and professional **README.md** file for your repository, based on your project summary:
-
----
-
-````markdown
 # 🎮 AI-Based Rock Paper Scissors Game
 
 An interactive Rock-Paper-Scissors game that combines classical AI with modern web and machine learning technologies. Playable using both button clicks and real-time hand gesture recognition via webcam.
@@ -11,36 +6,36 @@ An interactive Rock-Paper-Scissors game that combines classical AI with modern w
 
 ## 🚀 Features
 
-- 🤖 AI opponent using a **Markov Chain** prediction model
-- 🖱️ Button-based gameplay and ✋ gesture recognition via **TensorFlow.js**
-- 🔊 Real-time **voice feedback** using the SpeechSynthesis API
-- 📊 Game **statistics tracking**
-- 💾 Persistent AI learning using a local JSON model
+* 🤖 AI opponent using a **Markov Chain** prediction model
+* 🖱️ Button-based gameplay and ✋ gesture recognition via **TensorFlow.js**
+* 🔊 Real-time **voice feedback** using the SpeechSynthesis API
+* 📊 Game **statistics tracking**
+* 💾 Persistent AI learning using a local JSON model
 
 ---
 
 ## 🔧 Project Structure
 
 ### 🖥️ Backend (`app.py`)
-- Built with **Flask**
-- Core API routes:
+* Built with **Flask**
+* Core API routes:
   - `/` – Main game UI
   - `/play` – Accepts user move, predicts AI move, returns result
   - `/statistics` – Returns overall game stats
   - `/exit` – Saves Markov model to `model.json`
 
 ### 🧠 AI Logic (`random_ai.py`)
-- Implements:
+* Implements:
   - Move prediction with a Markov Chain
   - Game rules and winner determination
   - Persistent model updates and statistics generation
 
 ### 🌐 Frontend (`templates/index.html`, `static/js/router.js`)
-- **Tailwind CSS** UI with responsive design
-- Real-time webcam access for gesture input
-- Integration of **TensorFlow.js Handpose** for gesture classification
-- Dynamic updates for results and statistics
-- **Voice narration** of game results
+* **Tailwind CSS** UI with responsive design
+* Real-time webcam access for gesture input
+* Integration of **TensorFlow.js Handpose** for gesture classification
+* Dynamic updates for results and statistics
+* **Voice narration** of game results
 
 ---
 
@@ -73,7 +68,7 @@ pip install -r requirements.txt
 
 # Run the app
 python app.py
-````
+
 
 Then open `http://127.0.0.1:5000` in your browser.
 
@@ -110,9 +105,3 @@ MIT License – feel free to fork, improve, and share!
 
 Created as a minor project using **Flask**, **TensorFlow\.js**, and **Markov Chains**.
 
-```
-
----
-
-Let me know if you'd like me to customize the instructions (like for deployment, screenshots, or contributors).
-```
