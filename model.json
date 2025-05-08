@@ -1,1 +1,1 @@
-{"transition_counts": {}, "rock": {"rock": 8, "paper": 17, "scissors": 4}, "paper": {"scissors": 13, "rock": 10, "paper": 54}, "scissors": {"rock": 4, "scissors": 5, "paper": 7}}
+{"transition_counts": {}, "rock": {"rock": 64, "paper": 28, "scissors": 24}, "paper": {"scissors": 28, "rock": 25, "paper": 163}, "scissors": {"rock": 20, "scissors": 28, "paper": 27}}

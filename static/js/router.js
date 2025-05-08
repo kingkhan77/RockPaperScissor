@@ -24,7 +24,11 @@ function showStatistics() {
     fetch('/statistics')
     .then(response => response.json())
     .then(data => {
-        alert(`Total games: ${data.total_games}\nUser wins: ${data.user_wins}\nAI wins: ${data.ai_wins}\nDraws: ${data.draws}`);
+        const statsText = `Total games: ${data.total_games}, User wins: ${data.user_wins}, AI wins: ${data.ai_wins}, Draws: ${data.draws}`;
+        document.getElementById('result').innerText = statsText;
+        speak(statsText); // 🔊 Speak the statistics
+        // alert(`Total games: ${data.total_games}\nUser wins: ${data.user_wins}\nAI wins: ${data.ai_wins}\nDraws: ${data.draws}`);
+
     });
 }
 
@@ -74,7 +78,7 @@ function stopCamera() {
 
 function speak(text) {
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US'; // or adjust for your language
+    utterance.lang = 'hindi'; // or adjust for your language
     speechSynthesis.speak(utterance);
 }
 
