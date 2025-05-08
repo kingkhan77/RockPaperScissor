@@ -54,21 +54,27 @@ An interactive Rock-Paper-Scissors game that combines classical AI with modern w
 
 ## 📦 Installation
 
-```bash
-# Clone the repository
+
+### Clone the repository
+```
 git clone https://github.com/yourusername/rock-paper-scissors-ai.git
 cd rock-paper-scissors-ai
-
-# Set up virtual environment (optional but recommended)
+```
+### Set up virtual environment (optional but recommended)
+```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-# Install dependencies
+### Install dependencies
+```
 pip install -r requirements.txt
+```
 
-# Run the app
+### Run the app
+```
 python app.py
-
+```
 
 Then open `http://127.0.0.1:5000` in your browser.
 
